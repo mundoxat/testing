@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Mick xatframe</title>
+    <link rel="icon" href="https://xat.com/content/web/R00227/img/favicon-32x32.png" sizes="32x32" type="image/png">
+    <!-- Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="frame">
+    <div class="lego-text" id="logo" data-text="MICK"></div>
+    <div class="lego-sub" id="sub" data-text="- 10004 -"></div>
+</div>
+
+<!-- AUDIO -->
+<audio id="bgMusic" src="music.mp3" autoplay loop muted></audio>
+
+<!-- PLAYER -->
+<div class="player-btn" id="playerBtn">▶</div>
+
+<script>
+/* ===== TETRIS DROP ===== */
+function dropText(container, delay, waveAfter = false) {
+    const text = container.getAttribute("data-text");
+    container.innerHTML = "";
+
+    [...text].forEach((char, i) => {
+        const span = document.createElement("span");
+        span.textContent = char === " " ? "\u00A0" : char;
+        span.style.animationDelay = `${i * delay}ms`;
+
+        if (waveAfter) {
+            span.dataset.waveDelay = i * 120;
+        }
+
+        container.appendChild(span);
+    });
+
+    /* Activează wave după ce cade tot textul */
+    if (waveAfter) {
+        const totalTime = text.length * delay + 800;
+        setTimeout(() => {
+            container.classList.add("wave");
+        }, totalTime);
+    }
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+    dropText(document.getElementById("logo"), 180, true);
+    setTimeout(() => {
+        dropText(document.getElementById("sub"), 120, true);
+    }, 1200);
+
+    /* AUDIO AUTOPLAY SAFE */
+    const audio = document.getElementById("bgMusic");
+    audio.volume = 0.5;
+    audio.play().catch(() => {});
+
+    document.addEventListener("click", () => {
+        audio.muted = false;
+        btn.textContent = "❚❚";
+        btn.classList.add("playing");
+    }, { once: true });
+});
+
+/* PLAYER */
+const btn = document.getElementById("playerBtn");
+const audio = document.getElementById("bgMusic");
+
+btn.addEventListener("click", (e) => {
+    e.stopPropagation();
+    if (audio.paused) {
+        audio.muted = false;
+        audio.play();
+        btn.textContent = "❚❚";
+        btn.classList.add("playing");
+    } else {
+        audio.pause();
+        btn.textContent = "▶";
+        btn.classList.remove("playing");
+    }
+});
+</script>
+
+</body>
+</html>
