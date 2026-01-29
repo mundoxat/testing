@@ -1,298 +1,139 @@
-
 <!DOCTYPE html>
-<html lang='en' class=''>
-
+<html lang="es">
 <head>
-
-  <meta charset='UTF-8'>
-  <title>Mick</title>
-
-  <meta name="robots" content="noindex">
-
-  <link rel="shortcut icon" type="image/x-icon" href="https://u.cubeupload.com/BrunoT/divertido.png">
-  <link rel="mask-icon" href="https://u.cubeupload.com/BrunoT/divertido.png" color="#111">
-  
-
-  <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="sara mazal lessons">
-<meta name="keywords" content="HTML, CSS, JavaScript, mazal, icons">
-<meta name="author" content="Sara Mazal">
-<!--  SGVsbG8hIE15IG5hbWUgaXMgU2FyYSBNYXphbC4gV2VsY29tZSB0byBteSBDb2RlUGVuIQ== -->
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@200;300;400;500&family=Raleway:wght@100;200;300;400;500&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
-<!-- SGVsbG8hIE15IG5hbWUgaXMgU2FyYSBNYXphbC4gV2VsY29tZSB0byBteSBDb2RlUGVuOiBodHRwczovL2NvZGVwZW4uaW8vU2FyYW1hemFsICYgR2l0SHViOiBodHRwczovL2dpdGh1Yi5jb20vc2FyYW1hemFs -->
-<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous" />
-<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/particlesjs/2.2.3/particles.min.js"></script>
-  
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
-
-
-
-  <style id="INLINE_PEN_STYLESHEET_ID">
-    * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-body {
-  font-family: "ROBOTO", sans-serif;
-}
-
-.nav,
-.slider {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  position: relative;
-  background-color: #1e1f26;
-  text-align: center;
-  padding: 0 2em;
-}
-
-.nav h1,
-.slider h1 {
-  font-family: "Josefin Sans", sans-serif;
-  font-size: 5vw;
-  margin: 0;
-  padding-bottom: 0.5rem;
-  letter-spacing: 0.5rem;
-  background: linear-gradient(45deg, #b5c7b6, #121212); /* culoare primul nume */
-  -webkit-background-clip: text; /* Aplica o degradê apenas ao texto */
-  -webkit-text-fill-color: transparent; /* Faz o texto ficar transparente, permitindo que o degradê seja visível */
-  transition: all 0.3s ease;
-  z-index: 3;
-}
-
-h1:hover {
-  transform: translate3d(0, -10px, 22px);
-  color: #b5c7b6;
-}
-
-.slider h2 {
-  font-size: 2vw;
-  letter-spacing: 0.3rem;
-  font-family: "ROBOTO", sans-serif;
-  font-weight: 300;
-  color: #b5c7b6; /* culoare al doilea nume */
-  z-index: 4;
-}
-h3.span {
-  font-size: 2vw;
-  letter-spacing: 0.7em;
-  font-family: "ROBOTO", sans-serif;
-  font-weight: 300;
-  color: #b5c7b6;
-  z-index: 4;
-}
-span:hover {
-  color: #b5c7b6;
-  font-weight: 500;
-  font-size: 2.2vw;
-}
-
-a {
-  text-decoration: none;
-}
-
-.nav-container {
-  display: flex;
-  flex-direction: row;
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  height: 75px;
-  box-shadow: 20px 20px 50px rgba(0, 0, 0, 0.5);
-  background: #b5c7b6;
-  z-index: 10;
-  transition: all 0.3s cubic-bezier(0.19, 1, 0.22, 1);
-}
-
-.nav-container--top-first {
-  position: fixed;
-  top: 75px;
-  transition: all 0.3s cubic-bezier(0.19, 1, 0.22, 1);
-}
-
-.nav-container--top-second {
-  position: fixed;
-  top: 0;
-}
-.nav-tab {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex: 1;
-  color: #b5c7b6;
-  letter-spacing: 0.1rem;
-  transition: all 0.5s ease;
-  font-size: 2vw;
-}
-
-.nav-tab:hover {
-  color: #b5c7b6;
-  background: #b5c7b6;
-  transition: all 0.5s ease;
-}
-
-.nav-tab-slider {
-  position: absolute;
-  bottom: 0;
-  width: 0;
-  height: 2px;
-  background: #b5c7b6;
-  transition: left 0.3s ease;
-}
-.background {
-  position: absolute;
-  height: 90vh;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  z-index: auto;
-}
-@media (min-width: 800px) {
-  .nav h1,
-  .slider h1 {
-    font-size: 5vw;
-  }
-
-  .nav h2,
-  .slider h2 {
-    font-size: 3vw;
-  }
-
-  .nav-tab {
-    font-size: 3vw;
-  }
-}
-
-@media screen only (min-width: 360px) {
-  .nav h1,
-  .slider h1 {
-    font-size: 8vw;
-  }
-
-  .nav h2,
-  .slider h2 {
-    font-size: 2vw;
-    letter-spacing: 0.2vw;
-  }
-
-  .nav-tab {
-    font-size: 1.2vw;
-  }
-}
-.background {
-  position: absolute;
-  height: 100vh;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  z-index: 0;
-}
-.loader span {
-  color: #b5c7b6;  /* cor dos numeros de baixo */
-  text-shadow: 0 0 0 #b5c7b6;
-  -webkit-animation: loading 1s ease-in-out infinite alternate;
-}
-
-@-webkit-keyframes loading {
-  to {
-    text-shadow: 20px 0 70px #b5c7b6;
-    color: #b5c7b6;
-  }
-}
-.loader span:nth-child(2) {
-  -webkit-animation-delay: 0.1s;
-}
-.loader span:nth-child(3) {
-  -webkit-animation-delay: 0.2s;
-}
-.loader span:nth-child(4) {
-  -webkit-animation-delay: 0.3s;
-}
-.loader span:nth-child(5) {
-  -webkit-animation-delay: 0.4s;
-}
-.loader span:nth-child(6) {
-  -webkit-animation-delay: 0.5s;
-}
-.loader span:nth-child(7) {
-  -webkit-animation-delay: 0.6s;
-}
-.loader span:nth-child(8) {
-  -webkit-animation-delay: 0.7s;
-}
-.loader span:nth-child(9) {
-  -webkit-animation-delay: 0.8s;
-}
-
-.loader span:nth-child(10) {
-  -webkit-animation-delay: 0.9s;
-}
-.loader span:nth-child(11) {
-  -webkit-animation-delay: 1s;
-}
-.loader span:nth-child(12) {
-  -webkit-animation-delay: 1.1s;
-}
-.loader span:nth-child(13) {
-  -webkit-animation-delay: 1.2s;
-}
-.loader span:nth-child(14) {
-  -webkit-animation-delay: 1.3s;
-}
-.loader span:nth-child(15) {
-  -webkit-animation-delay: 1.4s;
-}
-.loader span:nth-child(16) {
-  -webkit-animation-delay: 1.5s;
-}
-.loader span:nth-child(17) {
-  -webkit-animation-delay: 1.6s;
-}
-.loader span:nth-child(18) {
-  -webkit-animation-delay: 1.7s;
-}
-.loader span:nth-child(19) {
-  -webkit-animation-delay: 1.8s;
-}
-.loader span:nth-child(20) {
-  -webkit-animation-delay: 1.9s;
-}
-.loader span:nth-child(21) {
-  -webkit-animation-delay: 2s;
-}
-.loader span:nth-child(22) {
-  -webkit-animation-delay: 2.1s;
-}
-
-  </style>
-
-  
-<script src="https://cpwebassets.codepen.io/assets/editor/iframe/iframeConsoleRunner-6bce046e7128ddf9391ccf7acbecbf7ce0cbd7b6defbeb2e217a867f51485d25.js"></script>
-<script src="https://cpwebassets.codepen.io/assets/editor/iframe/iframeRefreshCSS-44fe83e49b63affec96918c9af88c0d80b209a862cf87ac46bc933074b8c557d.js"></script>
-<script src="https://cpwebassets.codepen.io/assets/editor/iframe/iframeRuntimeErrors-4f205f2c14e769b448bcf477de2938c681660d5038bc464e3700256713ebe261.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mick xatframe</title>
+	<link rel="icon" href="https://xat.com/content/web/R00228/img/favicon-32x32.png" sizes="32x32" type="image/png">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=VT323&family=Great+Vibes&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
 </head>
-
-<body> 
-  <div id="particles-js"></div> </budy>
-
-<body></body>  
-<sectio class="nav">
-  <h1>Mick</h1> 
-  <h3 class="span loader">1<span class="m">0</span><span class="m">0</span><span class="m">0</span><span class="m">4</span><span class="m"></span><span class="m"></span><span class="m"></span><span class="m"></span><span class="m"></span><span class="m"></span><span class="m"></span><span class="m"></span></h3>
-</sectio><!-- SGVsbG8hIE15IG5hbWUgaXMgU2FyYSBNYXphbC4gV2VsY29tZSB0byBteSBDb2RlUGVuIQ== -->
-  
+<body>
     
-</body>
+    <div class="innovative-bg">
+        <video autoplay muted loop playsinline id="bg-video">
+            <source src="video/backgroundro.mp4" type="video/mp4">
+        </video>
+        <div class="bg-overlay"></div>
+    </div>
 
+    <div id="enter-screen">
+        <button id="enter-btn">
+            <i class="fa-solid fa-heart"></i> Login
+        </button>
+    </div>
+
+    <main id="main-layout" class="hidden-layout">
+        
+        <span class="border-line line-top"></span>
+        <span class="border-line line-right"></span>
+        <span class="border-line line-bottom"></span>
+        <span class="border-line line-left"></span>
+
+        <aside class="sidebar-gold">
+            <div class="profile-center-glow">
+                <img src="https://media.tenor.com/JbnLKar05tAAAAAM/anime-girl-light-blue-hair-anime.gif" alt="Profile" class="pfp-blue">
+            </div>
+            
+            <div class="name-container">
+                <h1 class="cursive-name">Mick</h1>
+            </div>
+            <span class="uid-gold">ID: 10004</span>
+
+            <nav class="nav-menu">
+                <button class="nav-btn-gold" onclick="openModal('modal-friends')">
+                    <i class="fa-solid fa-user-group"></i> Friends
+                </button>
+                <button class="nav-btn-gold" onclick="openModal('modal-music')">
+                    <i class="fa-solid fa-music"></i> Music
+                </button>
+            </nav>
+        </aside>
+
+        <section class="content-area-gold">
+            <div class="welcome-message">
+                <h2 class="center-title-fem">Mick</h2>
+                <div class="text-wrapper">
+                    <p id="typing-text"></p><span class="cursor">_</span>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <div id="modal-profile" class="modal">
+        <div class="modal-content gold-border">
+            <span class="close-btn" onclick="closeModal('modal-profile')">&times;</span>
+            <h3>PROFILE</h3>
+            <div class="profile-details">
+                <p style="font-family: var(--font-cursive); font-size: 1.5rem; color: var(--gold);">"Brilla sin opacar a otras"</p>
+                <br>
+                <ul>
+                    <li><strong>Find me:</strong> xat.com/Radiofantasia </li>
+                    <li><strong>Hobby:</strong> Bailar, cantar Karaoke</li>
+                    <li><strong>Zodiac Sign:</strong> Aries </li>
+                    <li><strong>My favorite food:</strong> Mexicana, italiana </li>
+                    <li><strong>Musical genre:</strong> Salsa, Bacha y banda </li>
+                    <li><strong>Nationality:</strong> Mexicana </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="modal-gallery" class="modal">
+        <div class="modal-content gold-border gallery-modal-size">
+            <span class="close-btn" onclick="closeModal('modal-gallery')">&times;</span>
+            <h3>GALLERY</h3>
+            <div class="gallery-wrapper">
+                <div class="gallery-container-3d">
+                    <div class="photo-carousel-3d" id="carousel-3d-track"></div>
+                </div>
+                <button class="nav-arrow-gold prev-3d" onclick="moveGallery(-1)">‹</button>
+                <button class="nav-arrow-gold next-3d" onclick="moveGallery(1)">›</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="modal-friends" class="modal">
+        <div class="modal-content gold-border">
+            <span class="close-btn" onclick="closeModal('modal-friends')">&times;</span>
+            <h3>FRIENDS</h3>
+             <div class="friend-list-gold">
+                <div class="friend-item-gold"><i class="fa-regular fa-user"></i> <span>Mick</span> <small>Online</small></div>
+                <div class="friend-item-gold"><i class="fa-regular fa-user"></i> <span>Mick1</span> <small>Online</small></div>
+                <div class="friend-item-gold"><i class="fa-regular fa-user"></i> <span>Mick2</span> <small>Online</small></div>
+            </div>
+        </div>
+    </div>
+
+    <div id="modal-music" class="modal">
+        <div class="modal-content gold-border">
+            <span class="close-btn" onclick="closeModal('modal-music')">&times;</span>
+            <h3>MUSIC</h3>
+             <div class="music-player-gold">
+                <div class="vinyl-record-gold" id="vinyl">
+                    <i class="fas fa-compact-disc"></i>
+                </div>
+                <div class="song-info-gold">
+                    <h4 id="song-title">Select Track</h4>
+                    <p id="song-artist">...</p>
+                    <div class="controls-gold">
+                        <button onclick="prevSong()"><i class="fas fa-backward"></i></button>
+                        <button onclick="togglePlay()"><i class="fas fa-play" id="play-icon"></i></button>
+                        <button onclick="nextSong()"><i class="fas fa-forward"></i></button>
+                    </div>
+                    <div class="fake-bar-gold"><div class="fill-gold" id="progress-bar"></div></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <audio id="audio" loop preload="auto"></audio>
+
+    
+
+    <script src="script.js"></script>
+</body>
 </html>
+
