@@ -156,7 +156,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // --- MÚSICA ---
     const playlist = [
-        { title: "BIRDS OF A FEATHER", artist: "Billie Eilish", src: "audio/Billie Eilish - BIRDS OF A FEATHER.mp3" },
+        { title: "When You Told Me You Loved Me", artist: "Jessica Simpsonh", src: "audio/Jessica Simpson - When You Told Me You Loved Me.mp3" },
     ];
     let sIdx = 0; let isPlaying = false; let pInt;
 
